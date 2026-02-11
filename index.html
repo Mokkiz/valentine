@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: #ff4b6e;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff4b6e;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff1f50;
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="content">
+    <h1>Mikä on meidän päivämäärä?</h1>
+    <p>(anna muodossa xx.x.xxxx)</p>
+    <input type="text" id="dateInput" placeholder="xx.x.xxxx">
+    <br>
+    <button onclick="checkDate()">Vastaa ❤️</button>
+</div>
+
+<script>
+function checkDate() {
+    const correctDate = "27.6.2025";
+    const userInput = document.getElementById("dateInput").value;
+
+    if (userInput === correctDate) {
+        showValentinePage();
+    } else {
+        alert("Höh 😢 Väärä päivämäärä, kokeile uudestaan rakas!");
+    }
+}
+
+function showValentinePage() {
+    document.getElementById("content").innerHTML = `
+        <img src="unnamed.jpg" alt="Meidän kuva">
+        <h1>Will you be my valentine? ❤️</h1>
+        <button onclick="showSuccess()">yes my love 💕</button>
+        <button onclick="showSuccess()">yes ❤️</button>
+    `;
+}
+
+function showSuccess() {
+    document.getElementById("content").innerHTML = `
+        <img src="unnamed.jpg" alt="Meidän kuva isona">
+        <h1 style="font-size:40px; color:#ff1f50;">JESSS JIPPII ❤️🎉</h1>
+    `;
+}
+</script>
+
+</body>
+</html>
